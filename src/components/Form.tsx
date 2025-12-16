@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { categories } from "../data/categories.ts";
+import type { ChangeEvent } from "react";
 
 export default function Form() {
 
@@ -8,6 +9,10 @@ export default function Form() {
     name: "",
     calories: 0,
   });
+
+  const handleChange = (e : ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) => {
+    setActivity({ ...activity, [e.target.id]: e.target.value })
+  }
 
   return (
     <form className="space-y-5 bg-white shadow p-10 rounded-lg">
@@ -19,6 +24,7 @@ export default function Form() {
           className="border border-slate-300 p-2 rounded-lg w-full bg-white"
           id="category"
           value={activity.category}
+          onChange={handleChange}
         >
           {categories.map((category) => (
             <option key={category.id} value={category.id}>
@@ -38,6 +44,7 @@ export default function Form() {
           className="border border-slate-300 p-2 rounded-lg"
           placeholder="Ej. Comida, Jungo de Naranja, Ensalada, Ejercicios, Pesas, Bicileta"
           value={activity.name}
+          onChange={handleChange}
         />
       </div>
 
@@ -51,6 +58,7 @@ export default function Form() {
           className="border border-slate-300 p-2 rounded-lg"
           placeholder="Calorías. ej. 300 o 500"
           value={activity.calories}
+          onChange={handleChange}
         />
       </div>
 
