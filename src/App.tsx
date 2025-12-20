@@ -2,7 +2,7 @@ import { useReducer, useEffect, useMemo } from "react"
 import { activityReducer, initialState } from "./reducers/activity-reducer";
 import Form from "./components/Form"
 import ActivityList from "./components/ActivityList";
-import CalorieTracker from "./components/calorieTracker";
+import CalorieTracker from "./components/CalorieTracker";
 
 function App() {
 
