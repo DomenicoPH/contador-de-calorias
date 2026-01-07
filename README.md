@@ -21,6 +21,8 @@ La app permite al usuario:
 ## Arquitectura y estado
 
 - Gestión de estado global mediante **useReducer**.
+- Uso de **Context API** para evitar el paso de props entre componentes.
+- Hook personalizado **useActivity** para acceder al contexto de manera sencilla.
 - Tipado estricto con **TypeScript**.
 - Generación de identificadores únicos con **uuid**.
 
